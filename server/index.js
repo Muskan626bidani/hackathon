@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(express.json());
-
 app.use(cors());
+
 
 app.get('/', (req, res) => {
      res.send('Hello World!');
@@ -17,7 +19,6 @@ app.get('/', (req, res) => {
 
 //--User featues
 //login
-//register
 //reset pwd/forgot pwd
 //submit and save details
 //get details
@@ -30,9 +31,11 @@ app.get('/', (req, res) => {
 //broadcast/create events
 //edit events
 //show users
+//user info
 //search user feature
-//show each user info
+//show each user list
+//show list
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(port, () => {
 	console.log(`Web-app backend is running at http://localhost:${port}`);
 });
