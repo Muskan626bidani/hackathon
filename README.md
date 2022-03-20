@@ -1,4 +1,4 @@
-# SMART INDIA HACKATHON
+# SMART INDIA HACKATHON 2022
 
 ## Problem Statement
 
