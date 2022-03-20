@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import Firebase from './config/fb-config';
 import './App.css';
 import Navbar from './components/Navbar';
 
