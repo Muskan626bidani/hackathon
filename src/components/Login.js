@@ -15,7 +15,6 @@ password: ""})
         e.preventDefault();
         const json = await userLogin(creds);
         const userdetail = json.user;
-
     }
 
     const handleOnChange = (e) => {

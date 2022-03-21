@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
      res.send('Hello World!');
 })
 
-app.use("/user",userRouter)
+app.use("/user", userRouter)
 //------------tentative apis list
 
 //--User featues
@@ -34,18 +34,17 @@ app.use("/user",userRouter)
 //submit and save details
 //get details
 //update details
+
 //notifs
 //nodemailer...to tell about deadlines
 
 //--Admin features
 //login
-//broadcast/create events
-//edit events
 //show users
 //user info
 //search user feature
-//show each user list
-//show list
+//verify data
+
 
 app.listen(port, () => {
 	console.log(`Web-app backend is running at http://localhost:${port}`);
