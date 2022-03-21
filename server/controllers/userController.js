@@ -136,5 +136,5 @@ const getDetails = async (req, res) => {
 		res.status(500).send("Internal Server Error");
 	}
 }
-module.exports = { createUser, loginUser, resetPwd, getDetails };
+module.exports = { createUser, loginUser, resetPwd, getDetails, submitForm };
 
