@@ -12,7 +12,6 @@ password: ""})
     const handleSubmit = async (e) => {
         e.preventDefault();
         const json = await userLogin(creds);
-        
     }
 
     const handleOnChange = (e) => {
