@@ -57,7 +57,14 @@ const createUser = async (req, res) => {
 }
 
 const loginUser = async (req, res) => {
+<<<<<<< HEAD
+	const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+	const { email, password } = req.body;
 	const { loginID, password } = req.body;
+>>>>>>> 9599c22b73f9e80649b324af64c37ffaecfeaa19
 
 	try {
 		let success = false;
