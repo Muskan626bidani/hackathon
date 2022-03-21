@@ -10,10 +10,7 @@ router.post('/newUser', UserController.createUser);
 router.post('./userDetails', UserController.getDetails);
 router.post("/login", UserController.loginUser);
 router.post("/resetPwd", UserController.resetPwd);
-<<<<<<< HEAD
 // router.post("/submit", auth, UserController.submitForm);
 
-=======
->>>>>>> 15059997992a5e6a7e0e59d0731ab7af472990ed
 
 module.exports=router;

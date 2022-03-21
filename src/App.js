@@ -8,17 +8,11 @@ import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 function App() {
   return (
    <Router>
-    <UserState>
-<<<<<<< HEAD
-      <Login />
-      {/* <InnerPage/> */}
-=======
-    
+    <UserState>    
      <Routes>
         <Route path='' element={<Login />} />
         <Route path='/innerPage' element={<Loginpage />} />
       </Routes>
->>>>>>> 15059997992a5e6a7e0e59d0731ab7af472990ed
     </UserState>
     </Router>
     )
