@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useState, useContext} from 'react'
+import userContext from '../context/users/userContext'
 import img1 from '../imgs/dept-of-fertilizers-logo.jpg'
 import './Login.css'
 
 function Login() {
+    const [creds, setCreds] = useState({loginID:"",
+password: ""})
+    const context = useContext(userContext);
+    const { userLogin } = context;
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const json = await userLogin(creds);
+    }
+
+    const handleOnChange = (e) => {
+        setCreds({ ...creds, [e.target.name]: e.target.value });
+    }
+
   return (
     <div className='login'>
         <div className="txt">
@@ -12,19 +27,19 @@ function Login() {
             <h1>Login</h1>
             <form method="post">
                 <div className="txt_field">
-                    <input type="text" required/>
+                    <input type="text" required name='loginID' value={creds.loginID} onChange={handleOnChange}/>
                     <span></span>
                     <label>Username</label>
                 </div>
                 <div className="txt_field">
-                    <input type="password" required/>
+                    <input type="password" required name='password' value={creds.password} onChange={handleOnChange}/>
                     <span></span>
                     <label>Password</label>
                 </div>
                 <div className="pass">
                     Forgot Password?
                 </div>
-                <input type="submit" value="Login" />
+                <input type="submit" value="Login" onClick={handleSubmit}/>
             </form>
         </div>
     </div>
