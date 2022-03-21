@@ -1,6 +1,17 @@
 const bcrypt = require("bcryptjs");
 const generateToken = require("../utils/generateToken");
 const User = require("../models/user");
+const Form = require("../models/form");
+
+const submitForm =  (req, res) => {
+	try {
+		const data =new Form(req.body)
+		 data.save();
+		res.status(200).send("Form submitted");
+	} catch (err) {
+		res.status(500).send({ message: "Something went wrong" });
+	}
+}
 
 const createUser = async (req, res) => {
 
@@ -113,6 +124,7 @@ const resetPwd = async (req, res) => {
 	}
 }
 
+
 const getDetails = async (req, res) => {
 	try {
 		const userID = req.user.id;
@@ -125,3 +137,4 @@ const getDetails = async (req, res) => {
 	}
 }
 module.exports = { createUser, loginUser, resetPwd, getDetails };
+
