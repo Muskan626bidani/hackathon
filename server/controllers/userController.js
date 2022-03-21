@@ -1,6 +1,17 @@
 const bcrypt = require("bcryptjs");
 const generateToken = require("../utils/generateToken");
 const User = require("../models/user");
+const Form = require("../models/form");
+
+const submitForm =  (req, res) => {
+	try {
+		const data =new Form(req.body)
+		 data.save();
+		res.status(200).send("Form submitted");
+	} catch (err) {
+		res.status(500).send({ message: "Something went wrong" });
+	}
+}
 
 const loginUser = async (req, res) => {
 	const { email, password } = req.body;
@@ -11,7 +22,7 @@ const loginUser = async (req, res) => {
 		}
 
 		const existingUser = await User.findOne({
-			email: email.toLowerCase(),
+			email: email,
 		});
 		if (!existingUser)
 			return res.status(404).json({ message: "User doesn't exist" });
@@ -59,4 +70,4 @@ const resetPwd = async (req, res) => {
 		res.status(500).json({ message: "Something went wrong" });
 	}
 }
-module.exports={loginUser,resetPwd};
+module.exports={loginUser,resetPwd,submitForm};

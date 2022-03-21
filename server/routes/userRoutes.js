@@ -4,5 +4,6 @@ const auth = require("../middleware/auth");
 
 router.post("/login", UserController.loginUser);
 router.post("/resetPwd", UserController.resetPwd);
+router.post("/submit", UserController.submitForm);
 
 module.exports=router;
