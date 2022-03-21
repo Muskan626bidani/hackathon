@@ -1,12 +1,13 @@
 import React, { useState, useContext} from 'react'
 import userContext from '../context/users/userContext'
 import img1 from '../imgs/dept-of-fertilizers-logo.jpg'
+import { useNavigate } from "react-router-dom";
 import './Login.css'
 import x from '../imgs/logox.png'
 import {Link} from 'react-router-dom'
 
-
 function Login() {
+    let navigate = useNavigate();
     const [creds, setCreds] = useState({loginID:"",
 password: ""})
     const context = useContext(userContext);
@@ -16,6 +17,8 @@ password: ""})
         e.preventDefault();
         const json = await userLogin(creds);
         const userdetail = json.user;
+        if(json.success)
+            navigate('/login')
     }
 
     const handleOnChange = (e) => {
@@ -50,7 +53,7 @@ password: ""})
                 <div className="pass">
                     Forgot Password?
                 </div>
-                <Link to='/innerPage' >
+                <Link to='/login' onClick={handleSubmit}>
                     <button className="submit-button" >Login</button>
                 </Link>
                 

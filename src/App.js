@@ -11,7 +11,7 @@ function App() {
     <UserState>    
      <Routes>
         <Route path='' element={<Login />} />
-        <Route path='/innerPage' element={<Loginpage />} />
+        <Route path='/login' element={<Loginpage />} />
       </Routes>
     </UserState>
     </Router>
