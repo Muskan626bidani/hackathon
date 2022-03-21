@@ -2,7 +2,12 @@ import React, { useState, useContext} from 'react'
 import userContext from '../context/users/userContext'
 import img1 from '../imgs/dept-of-fertilizers-logo.jpg'
 import './Login.css'
+<<<<<<< HEAD
 import x from '../imgs/logox.png'
+=======
+import {Link} from 'react-router-dom'
+
+>>>>>>> 15059997992a5e6a7e0e59d0731ab7af472990ed
 
 function Login() {
     const [creds, setCreds] = useState({loginID:"",
@@ -13,7 +18,7 @@ password: ""})
     const handleSubmit = async (e) => {
         e.preventDefault();
         const json = await userLogin(creds);
-        
+        const userdetail = json.user;
     }
 
     const handleOnChange = (e) => {
@@ -21,6 +26,7 @@ password: ""})
     }
 
   return (
+      <>
     <div className='login'>
         {/* <div className="txt">
             <p>Ministry of Chemicals and Fertilizers</p>
@@ -47,10 +53,19 @@ password: ""})
                 <div className="pass">
                     Forgot Password?
                 </div>
+<<<<<<< HEAD
                 <input type="submit" value="Login" onClick={handleSubmit} />
+=======
+                <Link to='/innerPage' >
+                    <button className="submit-button" >Login</button>
+                </Link>
+                
+
+>>>>>>> 15059997992a5e6a7e0e59d0731ab7af472990ed
             </form>
         </div>
     </div>
+    </>
   )
 }
 
