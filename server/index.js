@@ -4,6 +4,8 @@ const app = express();
 //Connection to DB
 const connectToMongo = require('./db')
 connectToMongo();
+
+const dotenv = require("dotenv");
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
@@ -12,13 +14,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors());
 
+app.use(cors());
+dotenv.config();
+
+//routes
+const userRouter = require('./routes/userRoutes');
 
 app.get('/', (req, res) => {
      res.send('Hello World!');
 })
 
+app.use("/user",userRouter)
 //------------tentative apis list
 
 //--User featues
