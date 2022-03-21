@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const generateToken = require("../utils/generateToken");
 const User = require("../models/user");
 const Form = require("../models/form");
+const { generateloginId } = require("../utils/generateLoginId");
 
 const submitForm = async (req, res) => {
 	try {
@@ -31,27 +32,23 @@ const createUser = async (req, res) => {
 		const salt = await bcrypt.genSalt(10);
 		const secPass = await bcrypt.hash(req.body.password, salt);
 
+		const loginId = generateloginId(req.body.name);
+		
 		user = await User.create({
 			name: req.body.name,
 			phoneNumber: req.body.phoneNumber,
 			email: req.body.email,
-			loginID: req.body.loginID,
+			loginID: loginId,
 			password: secPass,
 			location: req.body.location
 		});
-
-		const data = {
-			user: {
-				id: user.id
-			}
-		}
-
-		const authToken = generateToken(data);
-
+		console.log("hiii");
+		const authToken = generateToken(user._id);
+          
 		success = true
-		res.json({ success, authToken })
+		res.status(200).json({ success, authToken, user })
 	} catch (error) {
-		console.log(error.message)
+		console.log(error.message),
 		res.status(500).send("Internal Server Error");
 	}
 }
@@ -93,7 +90,7 @@ const loginUser = async (req, res) => {
 			token: generateToken(existingUser._id),
 		});
 	} catch (err) {
-		res.status(500).json({ message: "Something went wrong" });
+		res.status(500).json({ message: "Something went wrong" ,err});
 	}
 };
 
@@ -131,11 +128,45 @@ const getDetails = async (req, res) => {
 		const userID = req.user.id;
 		const user = await User.findById(userID);
 		select("-password");
+		
 		res.send(user);
 	} catch (error) {
 		console.log(error.message);
 		res.status(500).send("Internal Server Error");
 	}
 }
-module.exports = { createUser, loginUser, resetPwd, getDetails, submitForm };
+
+const updateDetails = async (req, res) => {
+	const { oldPassword, newPassword } = req.body;
+	const userId = req.params.id;
+
+	try {
+		if (!(oldPassword && newPassword) ) {
+			return res.status(400).json({ message: "Missing fields" });
+		}
+
+		const existingUser = await User.find(userId);
+		if (!existingUser)
+			return res.status(404).json({ message: "User doesn't exist" });
+		
+		const isPasswordValid =await bcrypt.compare(
+			oldPassword,
+			existingUser.password
+		);
+		if (!isPasswordValid)
+			return res.status(401).json({ message: "Invalid password" });
+
+		const salt = await bcrypt.genSalt(10);
+		const hashedPassword = await bcrypt.hash(newPassword, salt);
+		existingUser.password = hashedPassword;
+		console.log(existingUser);
+		await existingUser.save();
+
+		return res.status(200).json({ message: "Password updated successfully" });
+	} catch (err) {
+		return res.status(500).json({ message: "Something went wrong" ,error:err});
+	}
+};
+
+module.exports = { createUser, loginUser, resetPwd, getDetails, submitForm, updateDetails };
 
