@@ -4,10 +4,10 @@ const User = require("../models/user");
 const Form = require("../models/form");
 const { generateloginId } = require("../utils/generateLoginId");
 
-const submitForm =  (req, res) => {
+const submitForm = async (req, res) => {
 	try {
 		const data =new Form(req.body)
-		 data.save();
+		data.save();
 		res.status(200).send("Form submitted");
 	} catch (err) {
 		res.status(500).send({ message: "Something went wrong" });
@@ -54,6 +54,7 @@ const createUser = async (req, res) => {
 }
 
 const loginUser = async (req, res) => {
+
 	const { loginID, password } = req.body;
 
 	try {
