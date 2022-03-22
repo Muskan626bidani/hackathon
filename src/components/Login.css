@@ -79,6 +79,24 @@ form .txt_field{
     color: #2691d9;
 
 }
+.header{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(120deg, white, skyblue);
+}
+.logox{
+    height: 16vh;
+    width: 8vw;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.headText{
+    margin-left: 25px;
+    margin-top: 39px;
+    font-size: 2.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(0, 0, 0);
+}
 .txt_field input:focus ~ span::before,
 .txt_field input:valid ~ span::before{
     width: 100%;
@@ -140,3 +158,22 @@ form .txt_field{
         font-size: 1.5rem;
     }
   }
+
+  .header{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(120deg, white, skyblue);
+}
+.logox{
+    height: 16vh;
+    width: 8vw;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.headText{
+    margin-left: 25px;
+    margin-top: 39px;
+    font-size: 2.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(0, 0, 0);
+}
