@@ -50,14 +50,17 @@
     margin-left: 20.5vw;
     overflow-x: hidden;
     overflow-y:hidden;
+    background: linear-gradient(120deg, white, skyblue);
 
 }
 .user-homepage .a1st,.a2nd,.a3rd,.a4th,.a5th{
     height: 100%;
     width: 100%;
+    
 }
 .a1st{
-   overflow-x: scroll; 
+   overflow-x: hidden; 
+   overflow-y: scroll; 
 }
 .a2nd{
     overflow: hidden;
@@ -74,18 +77,23 @@
 }
 .a5th .myaccbox{
 
-border: 1px solid black;
+width: 450px;
+border: 10px solid black;
+border-radius: 15px;
 line-height: 40px;
-padding-left: 20px;
+padding-left: 25px;
 padding-right: 20px;
+padding-top: 20px;
+padding-bottom  : 20px;
+background: linear-gradient(120deg, skyblue, white);
 
 }
 .a5th .myaccbox .head1{
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
 }
 .a5th .myaccbox .dat1{
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 
 .table-heading{
