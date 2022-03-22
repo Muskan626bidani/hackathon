@@ -2,6 +2,7 @@ import React from 'react'
 import logoimg from '../imgs/logox.png'
 import CreateUser from './CreateUser.js'
 import './Admin.css'
+import UpdateDetails from './UpdateDetails'
 
 function Admin(props) {
   return (
@@ -41,7 +42,9 @@ function Admin(props) {
         </div>
         <div className='a2nd' id='2nd'>
           <div className="a2nd-main">
-            2nd Page
+            <div className="uptdet">
+            <UpdateDetails/>
+            </div>
           </div>
         </div>
         <div className='a3rd' id='3rd'>

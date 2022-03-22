@@ -54,10 +54,10 @@ function App() {
     <UserState>    
      <Routes>
         <Route path='' element={<Login getdata={getdata} />} />
-        {!userData.isAdmin && <Route path='/login' element={<Loginpage  userData={userData} fertdata={fertdata} />} />}
+        <Route path='/login' element={<Loginpage  userData={userData} fertdata={fertdata} />} />
+        <Route path='/loginAdmin' element={<Admin userData={userData} fertdata={fertdata}/>} />
       </Routes>
     </UserState>
-    {userData.isAdmin && <Admin userData={userData} fertdata={fertdata}/>}
     {console.log(userData)}
     </Router>
     )
