@@ -1,7 +1,8 @@
 import React from 'react'
 import './loginpage.css'
 import logoimg from '../imgs/logox.png'
-import Form1 from './Form1';
+import UpdateDetails from './UpdateDetails';
+import AddData from './AddData';
 
 function loginpage(props) {
   const articles = props.fertdata;
@@ -72,10 +73,12 @@ function loginpage(props) {
             </div>
           </div>
         </div>
-        <div className='a2nd' id='2nd'>2nd page</div>
+        <div className='a2nd' id='2nd'>
+          <AddData/>
+        </div>
         <div className='a3rd' id='3rd'>
           <div className='updateform'>
-            <Form1 />
+            <UpdateDetails/>
           </div>
         </div>
         <div className='a4th' id='4th'>4th page</div>
