@@ -35,6 +35,7 @@ app.use("/password-reset",passwordReset)
 //reset pwd/forgot pwd
 //submit and save details
 //get details
+
 //update details
 
 //notifs
@@ -45,7 +46,7 @@ app.use("/password-reset",passwordReset)
 //show users
 //user info
 //search user feature
-//verify data
+//broadcast/create form
 
 
 app.listen(port, () => {
