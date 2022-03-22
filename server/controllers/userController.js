@@ -4,6 +4,18 @@ const User = require("../models/user");
 const Form = require("../models/form");
 const { generateloginId } = require("../utils/generateLoginId");
 
+const getUsers = async (req, res) => {
+	try {
+		const Users = await User.find(
+			{},
+			{ name:1, loginID:1 }
+		);
+		return res.status(200).send({ message: "List of Users retrieved", Users })
+	} catch (err) {
+		res.status(500).send({ message: "Something went wrong",err })
+	}
+}
+
 const submitForm =async (req, res) => {
 	try {
 		const data = new Form(req.body)
@@ -147,5 +159,5 @@ const updateDetails = async (req, res) => {
 	}
 };
 
-module.exports = { createUser, loginUser, getDetails, submitForm, updateDetails };
+module.exports = { createUser, loginUser, getDetails, submitForm, updateDetails, getUsers };
 
