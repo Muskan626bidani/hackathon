@@ -1,6 +1,7 @@
-const User=require("../models/user")
-const checkAdmin =  (req, res, next) => {
-     const currentUser = User.find({ _id: res.params.id });
+const User = require("../models/user")
+
+const checkAdmin =  async (req, res, next) => {
+     const currentUser =await User.find({ _id: res.params.id });
      console.log(currentUser)
      try {
           if (!currentUser) {
