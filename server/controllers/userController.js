@@ -101,7 +101,7 @@ const getDetails = async (req, res) => {
 		const userID = req.params.id;
 
 		const user = await User.findById(userID);
-		select("-password");
+		
 		if (!user)
 			return res.status(404).send("User not found")
 		
@@ -109,7 +109,7 @@ const getDetails = async (req, res) => {
 		if (!forms)
 			return res.status(404).send("No submissions yet")
 		
-		res.status(200).send({ message: "Successfully fetch", user, forms });
+		res.status(200).send({ message: "Successfully fetch", forms });
 	} catch (error) {
 		console.log(error.message);
 		res.status(500).send("Internal Server Error");

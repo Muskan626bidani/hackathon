@@ -7,6 +7,6 @@ router.post("/updateDetails", UserController.updateDetails)
 router.post("/login", UserController.loginUser);
 router.post('/newUser', UserController.createUser);
 router.get("/userDetails/:id", UserController.getDetails);
-router.post("/submit",  UserController.submitForm);
+router.post("/submit",  auth, UserController.submitForm);
 
 module.exports=router;
