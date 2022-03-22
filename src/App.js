@@ -10,15 +10,15 @@ import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-  //  <Router>
-  //   <UserState>    
-  //    <Routes>
-  //       <Route path='' element={<Login />} />
-  //       <Route path='/Admin' element={<Admin />} />
-  //     </Routes>
-  //   </UserState>
-  //   </Router>
-    <Form />
+    <Router>
+     <UserState>    
+      <Routes>
+         <Route path='' element={<Login />} />
+         <Route path='/Admin' element={<Admin />} />
+       </Routes>
+     </UserState>
+     </Router>
+    // <Form />
     )
   }
 
