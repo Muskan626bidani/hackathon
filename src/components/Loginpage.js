@@ -1,5 +1,6 @@
 import React from 'react'
 import './loginpage.css'
+import logoimg from '../imgs/logox.png'
 
 function loginpage(props) {
   const articles = props.fertdata;
@@ -7,7 +8,7 @@ function loginpage(props) {
     <div className='user-main'>
       <div className='side-navbar'>
         <div className='profile-image'>
-
+          <img  className='img-profile' src={logoimg} alt="" />
         </div>
         <div className="userlinks">
           <div className="links">

@@ -16,10 +16,15 @@
     height: 15vw;
     width: 15vw;
     margin-left: 2.5vw;
-    background-color: black;
+    background: linear-gradient(#2980b9,#8944ad);
     border-radius: 10vw;
     margin-bottom: 1vh;
+    overflow: hidden;
     
+}
+.img-profile{
+    height: 15vw;
+    width: 15vw;
 }
 .user-main .side-navbar ul li{
     list-style: none;
