@@ -3,7 +3,10 @@ import { useState } from 'react';
 import Login from './components/Login';
 import UserState from './context/users/userState';
 import Loginpage from './components/Loginpage';
+import Admin from './components/Admin';
+import Form from './components/Form';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
 
 function App() {
   const [userData, setuserData] = useState({})
