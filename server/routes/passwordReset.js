@@ -10,19 +10,21 @@ router.post("/", async (req, res) => {
           }
 
           const existingUser = await User.findOne({
-               email: mail.toLowerCase(),
+               email: mail,
           });
           if (!existingUser)
                return res.status(404).json({ message: "User doesn't exist" });
 
-          const link = `http://localhost:5000/password-reset/${existingUser._id}/${token}`;
           const token = generateToken(existingUser._id);
+          const link = `http://localhost:5000/password-reset/${existingUser._id}/${token}`;
+          
           const text = `Hi ${existingUser.name},\n\nYou recently requested to reset your password for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\n${link}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n\nThanks,\n\nTeam`;
           const subject = "Password Reset Request";
           const email = existingUser.email;
+
           const sendEmail = require("../utils/sendEmails");
           sendEmail(email, subject, text);
-
+          console.log("heeyyyy")
           res.status(200).send({
                message: "Email sent",
           });

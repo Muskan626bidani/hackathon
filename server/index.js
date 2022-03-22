@@ -31,22 +31,24 @@ app.use("/password-reset",passwordReset)
 //------------tentative apis list
 
 //--User featues
-//login
+//login--done
 //reset pwd/forgot pwd
-//submit and save details
-//get details
+//submit and save details--done
+//get details --debugging
 
-//update details
+//update details --code
 
 //notifs
 //nodemailer...to tell about deadlines
 
 //--Admin features
-//login
-//show users
-//user info
-//search user feature
+//login --done
+//show users --done
+//user info --done
+//search user feature --frontend
+//validate --frontend
 //broadcast/create form
+//delete user --code
 
 
 app.listen(port, () => {
