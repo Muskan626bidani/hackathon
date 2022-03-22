@@ -27,6 +27,11 @@ const UserState = (props) => {
         const json = await response.json();
         console.log(json);
 
+        if (json.success) {
+            //Save the auth Token and redirect
+            localStorage.setItem('token', json.authToken);
+        }
+
         return json;
     }
 

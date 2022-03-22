@@ -20,12 +20,14 @@ dotenv.config();
 
 //routes
 const userRouter = require('./routes/userRoutes');
+const passwordReset=require("./routes/passwordReset")
 
 app.get('/', (req, res) => {
      res.send('Hello World!');
 })
 
 app.use("/user", userRouter)
+app.use("/password-reset",passwordReset)
 //------------tentative apis list
 
 //--User featues
@@ -33,6 +35,7 @@ app.use("/user", userRouter)
 //reset pwd/forgot pwd
 //submit and save details
 //get details
+
 //update details
 
 //notifs
@@ -43,7 +46,7 @@ app.use("/user", userRouter)
 //show users
 //user info
 //search user feature
-//verify data
+//broadcast/create form
 
 
 app.listen(port, () => {

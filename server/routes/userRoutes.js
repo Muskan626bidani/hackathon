@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const UserController = require('../controllers/userController');
 const auth = require("../middleware/auth");
+const checkAdmin = require("../middleware/checkAdmin")
 
-router.post('/newUser', UserController.createUser);
-router.post('./userDetails', auth, UserController.getDetails);
+router.post("/updateDetails", UserController.updateDetails)
 router.post("/login", UserController.loginUser);
-router.post("/resetPwd", UserController.resetPwd);
-router.post("/submit", auth, UserController.submitForm);
-
+router.post('/newUser', UserController.createUser);
+router.get("/userDetails/:id", UserController.getDetails);
+router.post("/submit",  UserController.submitForm);
 
 module.exports=router;
