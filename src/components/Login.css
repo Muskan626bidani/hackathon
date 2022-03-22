@@ -12,10 +12,15 @@
 
 }
 #NewUser{
-    float: right;
-    margin-left:430px;
-    width:50px;
-    border-radius: 6px;
+
+    margin-left:350px;
+    margin-top: 40px;
+    width:200px;
+    border-radius: 10px;
+    height: 35px;
+    background-color: #2691d9;
+    color: white;
+    border: white;
 }
 .txt p{
     background: linear-gradient(to right,#7666ce,white);
