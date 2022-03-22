@@ -37,7 +37,9 @@ password: ""})
             <p className="headText">
             Department of Chemicals and Petrochemicals
         </p>
+        <button id="NewUser" >New User Request</button>
         </div>
+        
         <div className="portal">
             <h1>Login</h1>
             <form method="post">

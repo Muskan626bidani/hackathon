@@ -3,6 +3,7 @@ import './loginpage.css'
 import logoimg from '../imgs/logox.png'
 import UpdateDetails from './UpdateDetails';
 import AddData from './AddData';
+import NewUserReq from './NewUserReq';
 
 function loginpage(props) {
   const articles = props.fertdata;
@@ -17,7 +18,7 @@ function loginpage(props) {
             <a href="#1st">Home</a>
           </div>
           <div className="links">
-            <a href="#2nd">Update Data</a>
+            <a href="#2nd">Add Data</a>
           </div>
           <div className="links">
             <a href="#3rd">Update Acc Det.</a>
@@ -78,7 +79,8 @@ function loginpage(props) {
         </div>
         <div className='a3rd' id='3rd'>
           <div className='updateform'>
-            <UpdateDetails/>
+            {/* <UpdateDetails/> */}
+            <NewUserReq/>
           </div>
         </div>
         <div className='a4th' id='4th'>4th page</div>
