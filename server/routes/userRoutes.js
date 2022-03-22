@@ -3,7 +3,7 @@ const UserController = require('../controllers/userController');
 const auth = require("../middleware/auth");
 const checkAdmin = require("../middleware/checkAdmin")
 
-router.post("/updateDetails", UserController.updatePwd);
+router.post("/updatePwd", UserController.updatePwd);
 router.post("/updateContact", UserController.updateContact);
 router.post("/login", UserController.loginUser);
 router.post('/newUser', UserController.createUser);
