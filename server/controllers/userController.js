@@ -131,7 +131,7 @@ const updateContact = async (req, res) => {
 	const { newPhn, newMail, newName } = req.body;
 
 	try {
-		const user = await User.find(userId);
+		const user = await User.findOne(userId);
 		if (!user)
 			return res.status(404).json({ message: "User not found" });
 		
