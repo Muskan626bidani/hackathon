@@ -22,11 +22,6 @@ export default function
             <label>Phone Number</label>
         </div>
         <div className="change">
-            <input required type="password" />
-            <span></span>
-            <label>Password</label>
-        </div>
-        <div className="change">
             <input required type="text" />
             <span></span>
             <label>Location</label>
