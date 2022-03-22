@@ -23,10 +23,15 @@
     height: 15vw;
     width: 15vw;
     margin-left: 2.5vw;
-    background-color: black;
+    background: linear-gradient(#2980b9,#8944ad);
     border-radius: 10vw;
     margin-bottom: 1vh;
+    overflow: hidden;
     
+}
+.img-profile{
+    height: 15vw;
+    width: 15vw;
 }
 .user-main .side-navbar ul li{
     list-style: none;
@@ -58,21 +63,16 @@
     margin-left: 20.5vw;
     overflow-x: hidden;
     overflow-y:hidden;
-    background: linear-gradient(120deg , white ,skyblue);
+    background: linear-gradient(120deg, white, skyblue);
 
 }
 .user-homepage .a1st,.a2nd,.a3rd,.a4th,.a5th{
     width: 100%;
-    height: 100vh;
+    
 }
 .a1st{
-   overflow-x: hidden;
-   margin: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   /* overflow-y: hidden; */
-   /* background: linear-gradient(120deg,white,skyblue); */
+   overflow-x: hidden; 
+   overflow-y: scroll; 
 }
 .a2nd{
     overflow: hidden;
@@ -93,22 +93,23 @@
 }
 .a5th .myaccbox{
 
-border: 1px solid black;
-border-radius: 4px;
+width: 450px;
+border: 10px solid black;
+border-radius: 15px;
 line-height: 40px;
-padding-left: 20px;
+padding-left: 25px;
 padding-right: 20px;
-transition: 1s linear;
-}
-.a5th .myaccbox:hover{
-    transform: scale(1.1);
+padding-top: 20px;
+padding-bottom  : 20px;
+background: linear-gradient(120deg, skyblue, white);
+
 }
 .a5th .myaccbox .head1{
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
 }
 .a5th .myaccbox .dat1{
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 .a1st-main{
     box-sizing: border-box;
