@@ -126,8 +126,31 @@ const getDetails = async (req, res) => {
 		res.status(500).send("Internal Server Error");
 	}
 }
+const updateContact = async (req, res) => {
+	const userId = req.params.id;
+	const { newPhn, newMail, newName } = req.body;
 
-const updateDetails = async (req, res) => {
+	try {
+		const user = await User.find(userId);
+		if (!user)
+			return res.status(404).json({ message: "User not found" });
+		
+		if (newPhn)
+			user.phoneNumber = newPhn;
+		if (newMail)
+			user.email = newMail;
+		if (newName)
+			user.name = newName;
+		
+		await user.save();
+		
+		res.status(200).send({ message: "User details updated successfully" });
+	} catch (err) {
+		return res.status(500).json({ message: "Something went wrong" ,error:err});
+	}
+}
+
+const updatePwd = async (req, res) => {
 	const { oldPassword, newPassword } = req.body;
 	const userId = req.params.id;
 
@@ -139,6 +162,13 @@ const updateDetails = async (req, res) => {
 		const existingUser = await User.find(userId);
 		if (!existingUser)
 			return res.status(404).json({ message: "User doesn't exist" });
+		
+		if (newPhn)
+			existingUser.phoneNumber = newPhn;
+		if (newName)
+			existingUser.name = newName;
+		if (newMail)
+			existingUser.email = newMail;
 		
 		const isPasswordValid =await bcrypt.compare(
 			oldPassword,
@@ -173,5 +203,5 @@ const deleteUser = async (req, res) => {
 		return res.status(500).json({ message: "Something went wrong" ,error:err});
 	}
 }
-module.exports = { createUser, loginUser, getDetails, submitForm, updateDetails, getUsers, deleteUser };
+module.exports = { createUser, loginUser, getDetails, submitForm, updatePwd, getUsers,updateContact, deleteUser };
 
