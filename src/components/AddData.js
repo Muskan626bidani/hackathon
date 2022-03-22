@@ -11,12 +11,12 @@ export default function () {
             <label>Item Name</label>
         </div>
         <div className="change">
-            <input required type='email' />
+            <input required type='number' />
             <span></span>
             <label>Quantity</label>
         </div>
         <div className="change">
-            <input required type="number"/>
+            <input required type="text"/>
             <span></span>
             <label>Unit</label>
         </div>
