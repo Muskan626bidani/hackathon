@@ -107,6 +107,25 @@ form .txt_field{
     border-color: #2691d9;
     transition: .5s;
 }
+.header{
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(120deg, white, skyblue);
+}
+.logox{
+    height: 16vh;
+    width: 8vw;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.headText{
+    margin-left: 25px;
+    margin-top: 39px;
+    font-size: 2.3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
 @media only screen and (max-width: 450px) {
     .portal {
       width: 340px;

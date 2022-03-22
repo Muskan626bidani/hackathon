@@ -6,7 +6,7 @@ import './Login.css'
 import x from '../imgs/logox.png'
 import {Link} from 'react-router-dom'
 
-function Login() {
+function Login(props) {
     let navigate = useNavigate();
     const [creds, setCreds] = useState({loginID:"",
 password: ""})
@@ -17,6 +17,7 @@ password: ""})
         e.preventDefault();
         const json = await userLogin(creds);
         const userdetail = json.user;
+        props.getdata(userdetail);
         if(json.success)
             navigate('/login')
     }
