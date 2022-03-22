@@ -1,6 +1,6 @@
 import React from 'react'
-import './Form1.css'
-function Form1() {
+import './UpdateDetails.css'
+function UpdateDetails() {
   return (
     <div className='form-main'>
             <h1>Update account details</h1>
@@ -27,4 +27,4 @@ function Form1() {
   )
 }
 
-export default Form1
+export default UpdateDetails;

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Login from './components/Login';
 import UserState from './context/users/userState';
 import Loginpage from './components/Loginpage';
-import Form from './components/Form1';
+import Form from './components/UpdateDetails';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Admin from './components/Admin';
 
