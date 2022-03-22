@@ -78,7 +78,7 @@ function loginpage(props) {
         </div>
         <div className='a3rd' id='3rd'>
           <div className='updateform'>
-            <UpdateDetails/>
+            <UpdateDetails userData={props.userData}/>
           </div>
         </div>
         <div className='a4th' id='4th'>4th page</div>

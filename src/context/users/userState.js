@@ -37,7 +37,7 @@ const UserState = (props) => {
 
     const getDataList = async (id) => {
         id = '623876297849263ce95a86f8'
-        const response = await fetch(`${host}/userDetails/${id}`, {
+        const response = await fetch(`${host}/userDetails?id:${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,8 +47,28 @@ const UserState = (props) => {
         console.log(json);
     }
 
+    const updateUser = async (creds) => {
+        const id = '623876297849263ce95a86f8';
+        
+        const response = await fetch(`${host}/user/updateContact?id:${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                newName: creds.name,
+                newMail: creds.email,
+                newPhn: creds.phoneNumber
+            })
+        });
+        const json = await response.json();
+        console.log(json);
+
+        return json;
+    }
+
     return (
-        <userContext.Provider value={{userLogin, getDataList}}>
+        <userContext.Provider value={{updateUser, userLogin, getDataList}}>
             {props.children}
         </userContext.Provider>
     )

@@ -53,7 +53,8 @@ const createUser = async (req, res) => {
 			email: req.body.email,
 			loginID: loginId,
 			password: secPass,
-			location: req.body.location
+			location: req.body.location,
+			isAdmin: req.body.isAdmin
 		});
 		console.log("hiii");
 		const authToken = generateToken(user._id);
@@ -131,9 +132,10 @@ const updateContact = async (req, res) => {
 	const { newPhn, newMail, newName } = req.body;
 
 	try {
+		let success = false;
 		const user = await User.findOne(userId);
 		if (!user)
-			return res.status(404).json({ message: "User not found" });
+			return res.status(404).json({ success, message: "User not found" });
 		
 		if (newPhn)
 			user.phoneNumber = newPhn;
@@ -144,9 +146,10 @@ const updateContact = async (req, res) => {
 		
 		await user.save();
 		
-		res.status(200).send({ message: "User details updated successfully" });
+		success = true;
+		res.status(200).send({ success, message: "User details updated successfully" });
 	} catch (err) {
-		return res.status(500).json({ message: "Something went wrong" ,error:err});
+		return res.status(500).json({ success, message: "Something went wrong" ,error:err});
 	}
 }
 
