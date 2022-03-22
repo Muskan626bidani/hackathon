@@ -35,8 +35,20 @@ const UserState = (props) => {
         return json;
     }
 
+    const getData = async (id) => {
+        id = '623876297849263ce95a86f8'
+        const response = await fetch(`${host}/userDetails/${id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const json = await response.json();
+        console.log(json);
+    }
+
     return (
-        <userContext.Provider value={{userLogin}}>
+        <userContext.Provider value={{userLogin, getData}}>
             {props.children}
         </userContext.Provider>
     )

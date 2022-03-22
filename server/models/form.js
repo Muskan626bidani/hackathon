@@ -8,29 +8,25 @@ const formSchema = new mongoose.Schema(
 			ref: "user",
 			required: true,
 		},
-		formData: [
-			{
-				item_name: {
-					type: String,
-					required: true,
-				},
-				item_quantity: {
-					type: Number,
-					required: true,
-				},
-				item_price: {
-					type: Number,
-					required: true,
-				},
-				item_description: {
-					type: String,
-				}
-			},
-		],
+		item_name: {
+			type: String,
+			required: true,
+		},
+		item_quantity: {
+			type: Number,
+			required: true,
+		},
+		item_price: {
+			type: Number,
+			required: true,
+		},
+		item_description: {
+			type: String,
+		}
 	},
 	{
 		timestamps: true,
 	}
 );
 
-module.exports= mongoose.model("form", formSchema);
+module.exports = mongoose.model("form", formSchema);
