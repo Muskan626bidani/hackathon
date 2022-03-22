@@ -11,6 +11,17 @@
     border-radius: 10px;
 
 }
+#NewUser{
+
+    margin-left:350px;
+    margin-top: 40px;
+    width:200px;
+    border-radius: 10px;
+    height: 35px;
+    background-color: #2691d9;
+    color: white;
+    border: white;
+}
 .txt p{
     background: linear-gradient(to right,#7666ce,white);
     font-size: 2.5rem;
@@ -82,6 +93,7 @@ form .txt_field{
 .header{
     display: flex;
     flex-direction: row;
+    width: 100%;
     background: linear-gradient(120deg, white, skyblue);
 }
 .logox{

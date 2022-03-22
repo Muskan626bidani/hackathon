@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Login from './components/Login';
 import UserState from './context/users/userState';
 import Loginpage from './components/Loginpage';
+import NewUserReq from './components/NewUserReq';
 import Form from './components/UpdateDetails';
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Admin from './components/Admin';
@@ -57,8 +58,11 @@ function App() {
         <Route path='/login' element={<Loginpage  userData={userData} fertdata={fertdata} />} />
         <Route path='/loginAdmin' element={<Admin userData={userData} fertdata={fertdata}/>} />
       </Routes>
+      <Routes> <Route path='/newuser' element={<NewUserReq />} /></Routes>
     </UserState>
     {console.log(userData)}
+    
+    
     </Router>
     )
   }

@@ -4,6 +4,7 @@ import logoimg from '../imgs/logox.png'
 import UpdateDetails from './UpdateDetails';
 import AddData from './AddData';
 
+
 function loginpage(props) {
   const articles = props.fertdata;
   return (
@@ -17,7 +18,7 @@ function loginpage(props) {
             <a href="#1st">Home</a>
           </div>
           <div className="links">
-            <a href="#2nd">Update Data</a>
+            <a href="#2nd">Add Data</a>
           </div>
           <div className="links">
             <a href="#3rd">Update Acc Det.</a>

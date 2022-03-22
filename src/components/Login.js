@@ -23,7 +23,11 @@ password: ""})
             {!userdetail.isAdmin && navigate('/login')}
             {userdetail.isAdmin && navigate('/loginAdmin')}
     }
-
+    const handleNewUser = async (e) => {
+        e.preventDefault();
+        
+            navigate('/newuser')
+    }
     const handleOnChange = (e) => {
         setCreds({ ...creds, [e.target.name]: e.target.value });
     }
@@ -39,7 +43,9 @@ password: ""})
             <p className="headText">
             Department of Chemicals and Petrochemicals
         </p>
+        <button id="NewUser" onClick={handleNewUser} >New User Request</button>
         </div>
+        
         <div className="portal">
             <h1>Login</h1>
             <form method="post">
