@@ -18,8 +18,10 @@ password: ""})
         const json = await userLogin(creds);
         const userdetail = json.user;
         props.getdata(userdetail);
+        {console.log(userdetail.isAdmin);}
         if(json.success)
-            navigate('/login')
+            {!userdetail.isAdmin && navigate('/login')}
+            {userdetail.isAdmin && navigate('/loginAdmin')}
     }
 
     const handleOnChange = (e) => {
